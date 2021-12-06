@@ -1,0 +1,84 @@
+
+
+<ion-content class="background">
+
+    <ion-header class="header">
+        <ion-toolbar color="primary">
+
+            <div *ngIf="contentLoaded">
+                        <ion-title class="text-center">Dashboard</ion-title>
+                            <div>
+                                <a [routerLink]="['/reports']" class="view" (click)="reports()">My Reports</a>
+                            </div>
+                
+                        </div>
+                        <div *ngIf="!contentLoaded">
+                        <ion-skeleton-text animated></ion-skeleton-text>
+            </div>
+
+
+        </ion-toolbar>
+    </ion-header>
+ <br>
+
+    <ion-card class="name" >
+
+        <ion-card-header >
+            <ion-card-title class="text-center"></ion-card-title>
+                <div *ngIf="contentLoaded">
+                    <ion-avatar class="avatar">
+                        <img src="../../assets/images/logo-icon.png">
+                    </ion-avatar>
+                </div>
+
+            <div *ngIf="!contentLoaded">
+                <ion-skeleton-text animated style="width: 2%;"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 2%;"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 2%;"></ion-skeleton-text>
+            </div>
+        </ion-card-header>
+
+
+        <ion-card-content >
+            <ion-text class="deets">
+                <div *ngIf="contentLoaded">
+                    <h3 class="text-center">{{lectureName}}</h3>
+                    <h3 class="text-center">{{email}}</h3>
+                    <h3 class="text-center">{{departmentName}}</h3>
+                </div>
+                <div *ngIf="!contentLoaded">
+                    <ion-skeleton-text animated style="width: 10%;"></ion-skeleton-text>
+                    <ion-skeleton-text animated style="width: 10%;"></ion-skeleton-text>
+                    <ion-skeleton-text animated style="width: 10%;"></ion-skeleton-text>
+                </div>
+            </ion-text>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="crd">
+        <ul class="text-center">
+            <ion-item-divider>
+                <h3>Modules</h3>
+                </ion-item-divider>
+            <div *ngIf="contentLoaded">
+                <div *ngFor="let lecInfo of lectureInfo">
+                    <ion-button class="btn1"color="tertiary" (click)="getModule(lecInfo.lecSubId)">{{lecInfo.subjCode}}</ion-button>
+                </div>
+            </div>
+            <div *ngIf="!contentLoaded">
+                <ion-skeleton-text animated style="width: 3000%;"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 3000%;"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 3000%;"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 3000%;"></ion-skeleton-text>
+            </div>
+        </ul>
+        </ion-card>
+
+    <div *ngIf="contentLoaded" class="ion-padding">
+        <ion-button class="btn2" [routerLink]="['/login']" expand="block" shape="round">logout</ion-button>
+    </div>
+    <div *ngIf="!contentLoaded" class="ion-padding">
+        <ion-skeleton-text animated style="width: 10%;"></ion-skeleton-text>
+    </div>
+
+</ion-content>

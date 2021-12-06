@@ -1,0 +1,61 @@
+<ion-content class="background">
+
+
+            <ion-header class= header>
+              
+              <ion-toolbar color="primary">
+                <ion-buttons slot="start">
+                <ion-back-button></ion-back-button>
+              </ion-buttons>
+                <ion-title>Reports</ion-title>
+
+                <ion-buttons slot="start">
+                  <ion-back-button defaultHref="hod-dashboard"></ion-back-button>
+              </ion-buttons>
+
+              </ion-toolbar>
+
+              <ion-card >
+              <ion-toolbar>
+              <ion-item lines="full">
+                  <ion-label style = "color: white">Select Week</ion-label>
+                  <ion-datetime [(ngModel)]="reportDate" min="2021" displayFormat="MM/DD/YYYY"></ion-datetime>
+              </ion-item>
+              <ion-button size="small" expand="full" (click)="search()"><ion-icon size="small" name="search"></ion-icon></ion-button>
+              </ion-toolbar>
+              </ion-card>
+
+            </ion-header>
+
+
+
+
+
+<ion-content class="seet">
+  <div *ngIf="modules">
+  <ion-card *ngFor="let mod of modules">
+   <ion-card-header>
+    <ion-label size="small"><h4 class="text-center">{{mod.title}}&nbsp;{{mod.lecName}}&nbsp;{{mod.lecSurname}}</h4></ion-label> 
+    <ion-label size="small"><h4 class="text-center">{{mod.date| date : 'dd MMM yyyy'}}</h4></ion-label>
+    <ion-card-subtitle class="text-center">{{mod.deptName}}</ion-card-subtitle>
+    <ion-card-title class="text-center"><b>{{mod.subjCode}}</b></ion-card-title>
+
+
+        <ion-button class="btn1" color="tertiary" (click)="getModule(mod.reportNum)">{{"View"}}</ion-button>  <!--  <b> </b> <ion-button class="btn1" color="tertiary" (click)="createPdf()">{{"Create PDF"}}</ion-button> <b> </b> <ion-button class="btn1" color="tertiary" (click)="downloadPdf() ">{{"Download"}}</ion-button> --> 
+      
+  
+  </ion-card-header>
+  <ion-card-content  class="background">
+
+    
+   </ion-card-content>
+  </ion-card>
+  </div>
+  <div *ngIf="!modules">
+	   <h4 class="text-center">No reports found!</h4>
+     <ion-back-button></ion-back-button>
+  </div>
+
+
+</ion-content>
+</ion-content>

@@ -1,0 +1,94 @@
+
+
+<ion-content class="background">
+  <ion-header [translucent]="true"  class="header">
+
+
+      <ion-toolbar color="primary">
+          
+          <ion-title class="text-center">
+              Lecturer Report
+          </ion-title>
+          <ion-buttons slot="start">
+
+              <ion-back-button defaultHref="lecture-dashboard"></ion-back-button>
+          </ion-buttons>
+
+
+      </ion-toolbar>
+  </ion-header>
+  <br>
+  <ion-card class="name">
+
+      <ion-item>
+          <ion-label position="stacked">Lecture:</ion-label>
+          <ion-input>{{Myname}}</ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="stacked">Module:</ion-label>
+          <ion-input [(ngModel)]="module">{{modules[0].subjCode}}  &nbsp;&nbsp;   </ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="stacked">Department:</ion-label>
+          <ion-input [(ngModel)]="department">{{modules[0].depCode}}</ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="stacked">Date:</ion-label>
+          <ion-input readonly>{{date| date:"yyyy/MM/dd"}}</ion-input><br>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Number of Students</ion-label>
+          <ion-input type="number" min="1" required [(ngModel)]="report.numStudents" name="numStudents"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Week average Attendance</ion-label>
+          <ion-input type="number" min="1" [(ngModel)]="report.attendAvg" name="attendAvg"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating">Topic(s) covered</ion-label>
+          <ion-textarea type="text" [(ngModel)]="report.topicsCovered" name="topicsCovered"></ion-textarea>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Mode of Teaching Used</ion-label>
+          <ion-select #newSelect [(ngModel)]="teachModes" name="teachModes" multiple="true" [ngModelOptions]="{standalone: true}">
+              <ion-select-option value="MyTUTor">MyTUTor</ion-select-option>
+              <ion-select-option value="MS Teams">MS Teams</ion-select-option>
+              <ion-select-option value="SMS">SMS</ion-select-option>
+              <ion-select-option value="EC">EC</ion-select-option>
+              <ion-select-option value="WhatsApp">WhatsApp</ion-select-option>
+              <ion-select-option value="Paper">Paper</ion-select-option>
+              <ion-select-option value="Contact">Contact</ion-select-option>
+          </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating ">Mode of Presentation</ion-label>
+          <ion-input type="text " [(ngModel)]="report.presentMode" name="presentMode "></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating ">Resources Used</ion-label>
+          <ion-input [(ngModel)]="report.resource" name="resource "></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating ">Activities</ion-label>
+          <ion-textarea type="text " [(ngModel)]="report.activities" name="activities "></ion-textarea>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating ">Assessments</ion-label>
+          <ion-textarea type="text " [(ngModel)]="report.assess" name="assess "></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="floating ">Challenge/Recommendations</ion-label>
+          <ion-textarea type="text " [(ngModel)]="report.challRecomm" name="challRecomm "></ion-textarea>
+      </ion-item>
+
+      <ion-button size="small " (click)="showPrompt()" [disabled]="!report.numStudents || !report.attendAvg" block>Create Report</ion-button>
+      <ion-button size="small " (click)="this.router.navigateByUrl( '/lecture-dashboard')">Cancel</ion-button>
+
+  </ion-card>
+</ion-content>

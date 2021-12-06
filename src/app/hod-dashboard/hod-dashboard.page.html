@@ -1,0 +1,75 @@
+
+
+
+
+
+
+<ion-content class="background">
+
+    <ion-header class="header">
+        <ion-toolbar color="primary">
+
+            
+                        <ion-title class="text-center">Dashboard</ion-title>
+                        <div>
+                            <a [routerLink]="['/reports']" class="view" (click)="reports()">Reports</a>
+                        </div>
+                
+                    
+                    
+                        <ion-skeleton-text animated></ion-skeleton-text>
+        
+
+
+        </ion-toolbar>
+    </ion-header>
+
+    
+    <ion-card class="name">
+        <ion-card-header>
+            <ion-card-title ></ion-card-title>
+            <ion-avatar class="avatar">
+                <img  width="150"  height="150"  src="../../assets/images/logo-icon.png">
+            </ion-avatar>
+        </ion-card-header>
+
+        <ion-card-content>
+            <ion-text>
+                <h3 class="text-center">{{hodName}}</h3>
+                <h3 class="text-center">{{email}}</h3>
+                <h3 class="text-center">{{deptName}}</h3>
+            </ion-text>
+        </ion-card-content>
+
+    </ion-card>
+    <ion-card class="cards">
+        <ion-card-header>
+        <ion-card-title class="text-center"></ion-card-title>
+        </ion-card-header>
+        <ion-card-content >
+            <div *ngIf="dashboardMod">
+
+                    <ion-item-divider class="text-center">
+                        <h4>Modules in Department</h4>
+                    </ion-item-divider>
+
+                <div *ngFor="let dashMod of dashboardMod"> 
+                    <ion-button class="btn1" color="tertiary"  (click)="getModulez(dashMod.reportNum)">{{dashMod.subjCode}}</ion-button>
+                </div>
+            </div>
+            <div *ngIf="!dashboardMod">
+            <h3 class="text-center"><b>No modules added yet</b></h3>
+            </div>
+            <div class="ion-padding">
+            <ion-button shape="round" color="primary" (click)="hodViewModulez()"  expand="block">Summary</ion-button>
+            <br>
+        
+            <br>
+            
+           
+            <ion-button class="btn2" [routerLink]="['/login']" expand="block" shape="round">logout</ion-button>
+            </div>
+        </ion-card-content>
+ </ion-card>
+
+</ion-content>

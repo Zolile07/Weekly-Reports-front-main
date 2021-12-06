@@ -1,0 +1,99 @@
+
+
+
+
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #464343;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+
+
+.login-btn{
+
+  padding:10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+
+}
+
+
+.card-center{
+  width:30%; // adjust width on your ion-card suitable on your screen
+  display:inline-block;
+  margin: 0 auto;
+  --ion-background-color:#0d0e0d5b;
+  
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  
+}
+
+
+
+
+
+
+
+
+
+ion-content.backgrond
+{
+
+  --background:url(../../assets/images/back1.png) no-repeat center center / cover;; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  //background-color: rgb(128, 187, 19);
+  
+ /* Add the blur effect 
+ filter: blur(2px);
+ -webkit-filter: blur(2px);*/
+
+ 
+  height: 100px;
+}
+
+ion-card {
+  height: 60%;
+  top: 10%;
+  
+  
+}
+
+//link hovers
+a:hover {
+  color:#e7a922;
+}
+a{
+  color:white;
+}
+ion-item{
+
+  font-weight: 200;
+  color: white;
+}

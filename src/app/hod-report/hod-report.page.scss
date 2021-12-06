@@ -1,0 +1,96 @@
+.background{
+  text-align: center;
+  padding: 0px;
+
+
+   --background:url(../../assets/images/back1.png) no-repeat center center / cover;; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+background-size: cover;
+//background-color: rgb(128, 187, 19);
+
+
+
+height: 100px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.text-center{
+    text-align: center;
+    color:white;
+  }
+  ion-content.background{
+  
+   --background: #f4f5f8;
+  }
+  
+  .styleContent{
+    border: 1px solid #ddd;
+    margin-top:5px;
+    margin-bottom: 5px;
+    padding: 4px;
+    border-radius: 5px;
+  }
+  .seet{
+
+    top: 8%;
+    left: 30%;
+    height: 50%;
+
+    --ion-background-color:#0d0e0d5b;
+    width:40%; // adjust width on your ion-card suitable on your screen
+    display:block;
+    margin: 0 auto;
+    color:white;
+  
+}
+
+
+.card-center{
+  width:30%; // adjust width on your ion-card suitable on your screen
+  display:inline-block;
+  margin: 0 auto;
+  --ion-background-color:#0d0e0d5b;
+  
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color:white;
+  
+}
+
+ion-content.background
+{
+
+  --background:url(../../assets/images/back1.png) no-repeat center center / cover;; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 100px;
+}
+
+
+
+
+.header{
+  margin-left:40;
+  --ion-background-color:#0d0e0d5b;
+  
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  
+  top:8%;
+  width: 40%;
+align-items: center;
+display:inline-block;
+
+}

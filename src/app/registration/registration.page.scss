@@ -1,0 +1,75 @@
+/*.item-select select,  .item-select select option{
+    left: 75%;
+  }*/
+
+.item-Input,
+.input-label,
+.center-block {
+    margin: auto;
+    display: block;
+    background-color: blue;
+    
+}
+
+.center {
+    text-align: center;
+}
+
+.custom-checkbox {
+    .item-cover {
+        width: 10%;
+    }
+}
+.card-center{
+    width:30%; // adjust width on your ion-card suitable on your screen
+    display:inline-block;
+    margin: 0 auto;
+    --ion-background-color:#0d0e0d5b;
+  
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+    
+    
+    
+  padding-bottom: 100px;
+  padding: 100px;
+  padding-top: 50px;
+    
+    
+}
+ion-content.backgrond
+{
+
+  --background:url(../../assets/images/back1.png) no-repeat center center / cover;; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  
+  //background-color: rgb(128, 187, 19);
+
+
+ 
+  height: 100px;
+}
+
+ion-card {
+    height: 90%;
+    top: 10%;
+    
+    
+}
+//link hovers
+a:hover {
+  color:#e7a922;
+}
+p{
+  color:white;
+}
+a{
+  color:white;
+}
+ion-item{
+
+  font-weight: 200;
+  color: white;
+}

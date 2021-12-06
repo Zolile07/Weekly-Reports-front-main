@@ -1,0 +1,100 @@
+
+.background{
+    text-align: center;
+    padding: 0px;
+
+
+     --background:url(../../assets/images/back1.png) no-repeat center center / cover;; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  //background-color: rgb(128, 187, 19);
+
+
+ 
+  height: 100px;
+
+}
+h4{
+    text-align: center;
+}
+.text-center{
+    text-align: center;
+    padding: 0px;
+
+}
+.avatar{
+    margin: auto;
+    top: 10px;
+    height:100px;
+    width:100px;
+}
+ion-item{
+    --border-color:grey;
+}
+
+
+.name{
+    height: 30%;
+    top:8%;
+    --ion-background-color:#0d0e0d5b;
+  
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    width:40%; // adjust width on your ion-card suitable on your screen
+    display:block;
+    margin: 0 auto;
+    color:white;
+    
+}
+.ion-padding{
+    left: 100%;
+    width: 50%;
+  align-items: center;
+  display:inline-block;
+}
+ 
+.cards {
+    height: 50%;
+    top:8%;
+    --ion-background-color:#0d0e0d5b;
+  
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    width:40%; // adjust width on your ion-card suitable on your screen
+    display:block;
+    margin: 0 auto;
+
+
+}
+.header{
+    top:8%;
+    width: 40%;
+  align-items: center;
+  display:inline-block;
+}
+
+.moved{
+   
+
+  
+    width:50%; // adjust width on your ion-card suitable on your screen
+    display:block;
+    margin: 0 auto;
+
+}
+.btn1 {
+    position: relative;
+    right: 1%;
+    width: 40%;
+
+}
+.deets{
+    margin-top: auto;
+ }
+
+ a {
+    position: absolute;
+    right: 4%;
+    color:rgb(250, 246, 246);
+}

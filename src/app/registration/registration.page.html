@@ -1,0 +1,140 @@
+
+    
+    <ion-content class="backgrond"  style="text-align: center;">
+        <ion-card class="card-center">
+
+            <ion-header>
+                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+
+                <div>
+                    <a href="">
+                    <img class="" alt=" " width="150"  height="150" src="../../assets/images/logo-icon.png"></a>
+                </div>
+                
+                    <ion-toolbar color="primary">
+                        <ion-title>Registration</ion-title>
+                       
+                    </ion-toolbar>
+                </ion-header>
+
+        <form (ngSubmit)="logForm()" >
+    
+            <ion-item>
+                <ion-label position="floating ">Title</ion-label>
+                <ion-select #newSelect [(ngModel)]="select.title" name="select.title" [ngModelOptions]="{standalone: true}" interface="action-sheet" required>
+                    <ion-select-option value="Mr">Mr</ion-select-option>
+                    <ion-select-option value="Mrs">Mrs</ion-select-option>
+                    <ion-select-option value="MISS">Miss</ion-select-option>
+                </ion-select>
+            </ion-item>
+    
+            
+            
+    
+    
+            <ion-item>
+                <ion-label position="floating ">Initials</ion-label>
+                <ion-input type="text" [(ngModel)]="select.lecName"  required name="select.lecName" #lecName="ngModel" ></ion-input>
+                 <div *ngIf="lecName.invalid && (lecName.dirty || lecName.touched)"
+                class="alert">
+            
+                         <div *ngIf="lecName.errors.required">
+                            Initials are required.
+                        </div>
+                    </div>
+            </ion-item>
+    
+            <ion-item>
+                <ion-label position="floating ">Surname</ion-label>
+                <ion-input type="text" [(ngModel)]="select.lecSurname"  required name="select.lecSurname" #lecSurname="ngModel" ></ion-input>
+                <div *ngIf="lecSurname.invalid && (lecSurname.dirty || lecSurname.touched)"
+                class="alert">
+            
+                         <div *ngIf="lecSurname.errors.required">
+                            surname is required.
+                        </div>
+                    </div>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="floating ">Staff Number</ion-label>
+                <ion-input type="text" [(ngModel)]="select.lecNum" required minlength="4" name="select.lecNum" #lecNum="ngModel"></ion-input>
+                <div *ngIf="lecNum.invalid && (lecNum.dirty || lecNum.touched)"
+                class="alert">
+            
+                        <div *ngIf="lecNum.errors.required">
+                            Staff no required.
+                        </div>
+                        <div *ngIf="lecNum.errors.minlength">
+                            Name must be at least 4 characters long.
+                        </div>
+                    </div>
+            </ion-item>
+    
+            <ion-item>
+                <ion-label position="floating ">Email</ion-label>
+                <ion-input type="email" [(ngModel)]="select.email" ngModel email="true" required   #email="ngModel" name="select.email" ></ion-input>
+                <div *ngIf="email.invalid && (email.dirty || email.touched) "
+            class="alert" >
+
+              <div *ngIf="email.errors.required">
+                email is required.
+            </div>
+            <div *ngIf="email.errors.pattern">
+               Must be @tut.ac.za
+            </div>
+            </div>
+
+            </ion-item>
+    
+            <ion-item>
+                <ion-label position="floating " for ="psw">Password</ion-label>
+                <ion-input type="password"  [(ngModel)]="select.password" name="select.password"  #password="ngModel" required  ></ion-input>
+                <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                class="alert" >
+    
+                  <div *ngIf="password.errors.required">
+                    password is required.
+                </div>
+                <div *ngIf="password.errors.pattern">
+                    must contain at least a one number and one  uppercase and one lowercase, and at leaast 8 or more charecters
+                </div>
+                </div>
+            </ion-item>
+            
+            <ion-item>
+                <ion-label position="floating ">Select Department</ion-label>
+                <ion-select [ngModel]="department" multiple="false" interface="action-sheet" (ngModelChange)="onDropdownChange($event)" class="form-control" id="department" name="department" required>
+                    <ion-select-option *ngFor="let dep of department" [value]="dep.depCode">
+                        {{dep.deptName}}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+    
+            <ion-item>
+                <ion-label position="floating ">Modules</ion-label>
+                <ion-select [ngModel]="selectModules" multiple="true" (ngModelChange)="selectModules($event)" class="form-control" id="modules" name="modules" required>
+                    <ion-select-option *ngFor="let mod of modules" [value]="mod.subjCode">
+                        {{mod.subjName}}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+
+            
+    
+            <ion-item no-lines no-padding class="custom-checkbox">
+                <ion-label>I agree <a>Terms and Conditions</a></ion-label>
+                <ion-checkbox name="terms" [(ngModel)]="terms" checked="false" required></ion-checkbox>
+            </ion-item>
+                <p>Already registered? &nbsp;<a href="/login" class="login-btn">Login</a> </p>
+            <ion-button expand="block" shape="round" type="submit" [disabled]="!terms" block>create Account</ion-button>
+        </form>
+    </ion-card>
+        <script>
+            angular.module("myApp", [])
+                .controller('myController', ['$scope', function ($scope) {
+                } ]);
+        </script>
+
+
+    </ion-content>

@@ -1,0 +1,28 @@
+<ion-content class="background">
+    <ion-header  class="header" >
+        <ion-toolbar color="primary">
+            <ion-title>My Reports</ion-title>
+            <ion-buttons slot="start">
+                <ion-back-button defaultHref="lecture-dashboard"></ion-back-button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="seet">
+        <ion-card class=".card1">
+            <ion-card-content class="seety">
+                <ion-item-divider>
+                    <h3>Modules</h3>
+                </ion-item-divider>
+                <ul>
+                    <!--<ion-item *ngFor="let mod of modules">{{mod.subjCode}}</ion-item>-->
+                    <ion-list *ngFor="let mod of modules">
+                        <ion-button color="tertiary" (click)="getModule(mod.reportNum)">{{mod.subjCode}}</ion-button>
+                         
+                    </ion-list>
+                </ul>
+            </ion-card-content>
+        </ion-card>
+    </ion-content>
+
+</ion-content>

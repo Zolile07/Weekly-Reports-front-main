@@ -1,0 +1,89 @@
+
+
+
+<ion-content class="backgrond" style="text-align: center;">
+
+
+
+
+    
+    <ion-card class="card-center">
+
+        <ion-header>
+            <div>
+                <a href="">
+                <img class="" alt=" " width="150"  height="150" src="../../assets/images/logo-icon.png"></a>
+            </div>
+
+            
+            <ion-toolbar color="primary">
+                <ion-title>Login</ion-title>
+               
+            </ion-toolbar>
+        </ion-header>
+
+
+
+        <div *ngIf="contentLoaded">
+            <form (ngSubmit)="logForm()">
+                <ion-list>
+    
+                    <ion-item>
+                        <ion-label position="floating ">Role</ion-label>
+                        <ion-select #newSelect [(ngModel)]="role" name="role" [ngModelOptions]="{standalone: true}" interface="action-sheet">
+                            <ion-select-option value="HOD" checked="true">HOD</ion-select-option>
+                            <ion-select-option value="LECTURER">Lecturer</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+    
+                    <ion-item>
+                        <ion-label position="floating ">Staff Number</ion-label>
+                        <ion-input minlength="9" maxlength="9" type="staffNo" [(ngModel)]="select.staffNo" name="select.staffNo"></ion-input>
+                    </ion-item>
+    
+                    <ion-item>
+                        <ion-label position="floating ">Password</ion-label>
+                        <ion-input type="password" [(ngModel)]="select.password" name="select.password"></ion-input>
+                    </ion-item><br><br><br><br><br><br><br><br>
+                    
+                    <p>Haven't registered? <a size="small" [routerLink]="['/registration']">Register</a></p>
+
+                </ion-list>
+                <div padding>
+                    <ion-button shape="round" type="submit" block>Login</ion-button>
+                </div><br>
+                
+              
+            </form>
+        </div>
+    </ion-card>
+    
+    <div *ngIf="!contentLoaded">
+        <form (ngSubmit)="logForm()">
+            <ion-list>
+
+                <ion-item>
+                    <ion-skeleton-text animated style="width: 30%;"></ion-skeleton-text>
+                    <ion-skeleton-text animated style="width: 30%;"></ion-skeleton-text>
+                </ion-item>
+
+                <ion-item>
+                    <ion-skeleton-text animated></ion-skeleton-text>
+                    <ion-skeleton-text animated></ion-skeleton-text>
+                </ion-item>
+
+                <ion-item>
+                    <ion-skeleton-text animated></ion-skeleton-text>
+                    <ion-skeleton-text animated></ion-skeleton-text>
+                </ion-item>
+
+                <div padding>
+                    <ion-skeleton-text animated style="width: 20%; text-align: center;"></ion-skeleton-text>
+                </div>
+                <ion-skeleton-text animated style="width: 20%;"></ion-skeleton-text>
+
+            </ion-list>
+        </form>
+    </div>
+
+</ion-content>
